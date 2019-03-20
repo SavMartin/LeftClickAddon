@@ -1,5 +1,5 @@
 # LeftClickAddon
-LeftClick Alternative for Blender 2.80
+LeftClick Alternativa para Blender 2.80
 ----------------------------------------
 Este Addon ha sido creado para equiparar las opciones del keymap que tienen los usuarios del clik derecho en Blender 2.80.
 
