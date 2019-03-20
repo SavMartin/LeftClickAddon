@@ -528,7 +528,7 @@ class SAM_PrefPanel(bpy.types.AddonPreferences):
             layout.label(text="Change Default Selecction                                                       CTRL + W")
             layout.label(text="Connect Vertex Path (Edit Mode)                        SHIFT + RIGHTMOUSE")
             layout.label(text="All Contex Menus                                                                                   W")
-            layout.operator("wm.url_open", text="GitHub").url = "https://github.com/SavMartin/LeftClickAddon/upload/master"
+            layout.operator("wm.url_open", text="GitHub").url = "https://github.com/SavMartin/LeftClickAddon"
 
 
 classes = ( 
