@@ -304,7 +304,7 @@ def register_keymap():
     #Add Call Menu In Particle
 
     km = kc.keymaps.new(name="Particle", space_type="EMPTY", region_type='WINDOW')
-    kmi = km.keymap_items.new("wm.call_panel", 'W', 'PRESS')
+    kmi = km.keymap_items.new("wm.call_menu", 'W', 'PRESS')
     kmi.properties.name = 'VIEW3D_MT_particle_context_menu'
     addon_keymaps.append((km, kmi))
 
