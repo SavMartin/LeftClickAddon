@@ -144,7 +144,11 @@ def keymaps_default_manipulator(modo):
 
     #Disable Call Menu Vertex Paint
 
-    wm.keyconfigs.default.keymaps['Vertex Paint'].keymap_items['wm.call_panel'].active = modo              
+    wm.keyconfigs.default.keymaps['Vertex Paint'].keymap_items['wm.call_panel'].active = modo 
+    
+    #Disable Call Menu Particle
+
+    wm.keyconfigs.default.keymaps['Particle'].keymap_items['wm.call_panel'].active = modo
     
     #Disable  Lasso Shade Editor
 
@@ -296,6 +300,14 @@ def register_keymap():
     kmi = km.keymap_items.new("wm.call_panel", 'W', 'PRESS')
     kmi.properties.name = 'VIEW3D_PT_paint_vertex_context_menu'
     addon_keymaps.append((km, kmi))
+    
+    #Add Call Menu In Particle
+
+    km = kc.keymaps.new(name="Particle", space_type="EMPTY", region_type='WINDOW')
+    kmi = km.keymap_items.new("wm.call_panel", 'W', 'PRESS')
+    kmi.properties.name = 'VIEW3D_MT_particle_context_menu'
+    addon_keymaps.append((km, kmi))
+
 
     #Add Set 3D Cursor
 
