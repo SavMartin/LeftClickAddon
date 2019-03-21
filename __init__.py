@@ -148,7 +148,7 @@ def keymaps_default_manipulator(modo):
     
     #Disable Call Menu Particle
 
-    wm.keyconfigs.default.keymaps['Particle'].keymap_items['wm.call_panel'].active = modo
+    wm.keyconfigs.default.keymaps['Particle'].keymap_items['wm.call_menu'].active = modo
     
     #Disable  Lasso Shade Editor
 
