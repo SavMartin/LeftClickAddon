@@ -481,7 +481,7 @@ class Switcher(bpy.types.Operator):
         return {'FINISHED'}
 
 
-class Icon(ToolSelectPanelHelper, Panel):
+class ICON_PT_Icon(ToolSelectPanelHelper, Panel):
 
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'TOOLS'
@@ -544,7 +544,7 @@ class SAM_PrefPanel(bpy.types.AddonPreferences):
 
 
 classes = ( 
-    Icon,
+    ICON_PT_Icon,
     Switcher,
     SAM_PrefPanel,
 )
