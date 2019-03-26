@@ -14,7 +14,7 @@ bl_info = {
     "name": "Leftclick Mouse Select",
     "description": "LeftclickMouse seleccion configurator",
     "author": "Jorge Hernandez - Melenedez , Sav Martin",
-    "version": (0, 1),
+    "version": (0, 2),
     "blender": (2, 80, 0),
     "location": "",
     "warning": "",
