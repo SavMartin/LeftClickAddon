@@ -13,13 +13,13 @@ from bpy.props import BoolProperty, PointerProperty, \
 bl_info = {
     "name": "Leftclick Mouse Select",
     "description": "LeftclickMouse seleccion configurator",
-    "author": "Jorge Hernandez - Melenedez , Sav Martin",
+    "author": "Sav Martin, Jorge Hernandez - Melenedez, Juan Gea",
     "version": (0, 2),
     "blender": (2, 80, 0),
     "location": "",
     "warning": "",
-    "wiki_url": "",
-    "tracker_url": "",
+    "wiki_url": "https://github.com/SavMartin/LeftClickAddon",
+    "tracker_url": "https://github.com/SavMartin/LeftClickAddon",
     "category": "User"
 }
 
