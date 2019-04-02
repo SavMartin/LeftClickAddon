@@ -6,7 +6,7 @@ Este Addon ha sido creado para equiparar las opciones del keymap que tienen los 
 Ademas hemos añadido una opción mas cómoda, cambiar el tipo de selección por defecto mediante la combinación de teclas Ctrl+ W, esto permite activar Box,Lasso o Circle select en cualquier momento, y en cualquier herramienta activa. 
 Tambien hemos activado la opción de poder hacer "clik and drag" sobre la selección en "Edit Mode" sobre cualquier "Active Tool" tal como se podia hacer en versiones anteriores de blender.
 
-<iframe width="1668" height="727" src="https://www.youtube.com/embed/6irCnvrw8R8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+https://www.youtube.com/embed/6irCnvrw8R8 
 
 # LeftClickAddon
 LeftClick Alternative for Blender 2.80
