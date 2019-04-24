@@ -40,7 +40,7 @@ def keymaps_default_manipulator(modo):
     
     #Disable TransForm
 
-    wm.keyconfigs.default.keymaps['3D View Tool: Transform'].keymap_items['transform.from_gizmo'].active = modo
+    #wm.keyconfigs.default.keymaps['3D View Tool: Transform'].keymap_items['transform.from_gizmo'].active = modo #delete on new version
     
     #Disable Move
 
