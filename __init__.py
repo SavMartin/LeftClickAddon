@@ -228,7 +228,7 @@ def register_keymap():
 
     km = kc.keymaps.new(name="Mesh", space_type="EMPTY", region_type='WINDOW')
     kmi = km.keymap_items.new("wm.call_menu", 'W', 'PRESS')
-    kmi.properties.name = 'VIEW3D_MT_object_context_menu'
+    kmi.properties.name = 'VIEW3D_MT_edit_mesh_context_menu'
     addon_keymaps.append((km, kmi))
 
     #Add Call Menu In Dopesheet
