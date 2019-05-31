@@ -13,13 +13,13 @@ from bpy.props import BoolProperty, PointerProperty, \
 bl_info = {
     "name": "Leftclick Mouse Select",
     "description": "LeftclickMouse seleccion configurator",
-    "author": "Sav Martin, Jorge Hernandez - Melenedez, Juan Gea",
+    "author": "Jorge Hernandez - Melenedez , Sav Martin",
     "version": (0, 2),
     "blender": (2, 80, 0),
     "location": "",
     "warning": "",
-    "wiki_url": "https://github.com/SavMartin/LeftClickAddon",
-    "tracker_url": "https://github.com/SavMartin/LeftClickAddon",
+    "wiki_url": "",
+    "tracker_url": "",
     "category": "User"
 }
 
@@ -27,7 +27,7 @@ def start_thread():
     _thread.start_new_thread(thrd_func,())
 
 def thrd_func():
-    time.sleep(1)
+    time.sleep(.1)
     keymaps_default_manipulator(False)
     
 
@@ -40,7 +40,7 @@ def keymaps_default_manipulator(modo):
     
     #Disable TransForm
 
-    #wm.keyconfigs.default.keymaps['3D View Tool: Transform'].keymap_items['transform.from_gizmo'].active = modo #delete on new version
+    # wm.keyconfigs.default.keymaps['3D View Tool: Transform'].keymap_items['transform.from_gizmo'].active = modo
     
     #Disable Move
 
@@ -178,43 +178,43 @@ def register_keymap():
 
     #Add Select in Select Box
     km = kc.keymaps.new(name="3D View Tool: Select Box", space_type="VIEW_3D", region_type='WINDOW')
-    kmi = km.keymap_items.new("view3d.select", 'LEFTMOUSE', 'PRESS')
+    kmi = km.keymap_items.new("view3d.select", 'EVT_TWEAK_L', 'ANY')
     addon_keymaps.append((km, kmi))
 
     #Add Select in Select Circle
 
     km = kc.keymaps.new(name="3D View Tool: Select Circle", space_type="VIEW_3D", region_type='WINDOW')
-    kmi = km.keymap_items.new("view3d.select", 'LEFTMOUSE', 'PRESS')
+    kmi = km.keymap_items.new("view3d.select", 'EVT_TWEAK_L', 'ANY')
     addon_keymaps.append((km, kmi))    
 
     #Add Select in Select Lasso
 
     km = kc.keymaps.new(name="3D View Tool: Select Lasso", space_type="VIEW_3D", region_type='WINDOW')
-    kmi = km.keymap_items.new("view3d.select", 'LEFTMOUSE', 'PRESS')
+    kmi = km.keymap_items.new("view3d.select", 'EVT_TWEAK_L', 'ANY')
     addon_keymaps.append((km, kmi))
 
     #Add Select in Transform
 
     km = kc.keymaps.new(name="3D View Tool: Transform", space_type="VIEW_3D", region_type='WINDOW')
-    kmi = km.keymap_items.new("view3d.select", 'LEFTMOUSE', 'PRESS')
+    kmi = km.keymap_items.new("view3d.select", 'EVT_TWEAK_L', 'ANY')
     addon_keymaps.append((km, kmi))
 
     #Add Select in Move
 
     km = kc.keymaps.new(name="3D View Tool: Move", space_type="VIEW_3D", region_type='WINDOW')
-    kmi = km.keymap_items.new("view3d.select", 'LEFTMOUSE', 'PRESS')
+    kmi = km.keymap_items.new("view3d.select", 'EVT_TWEAK_L', 'ANY')
     addon_keymaps.append((km, kmi))
 
     #Add Select in Rotate
 
     km = kc.keymaps.new(name="3D View Tool: Rotate", space_type="VIEW_3D", region_type='WINDOW')
-    kmi = km.keymap_items.new("view3d.select", 'LEFTMOUSE', 'PRESS')
+    kmi = km.keymap_items.new("view3d.select", 'EVT_TWEAK_L', 'ANY')
     addon_keymaps.append((km, kmi))
 
     #Add Select in Scale
 
     km = kc.keymaps.new(name="3D View Tool: Scale", space_type="VIEW_3D", region_type='WINDOW')
-    kmi = km.keymap_items.new("view3d.select", 'LEFTMOUSE', 'PRESS')
+    kmi = km.keymap_items.new("view3d.select", 'EVT_TWEAK_L', 'ANY')
     addon_keymaps.append((km, kmi)) 
     
     #Add Call Menu In Objetc Mode
