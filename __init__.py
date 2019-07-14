@@ -27,7 +27,7 @@ def start_thread():
     _thread.start_new_thread(thrd_func,())
 
 def thrd_func():
-    time.sleep(.5)
+    time.sleep(1.5)
     keymaps_default_manipulator(False)
     
 
