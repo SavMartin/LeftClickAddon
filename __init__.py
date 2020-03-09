@@ -165,9 +165,9 @@ def keymaps_default_manipulator(modo):
 
     #Disable  Lasso Weight Paint Vertex Selection
 
-    for item in wm.keyconfigs.default.keymaps['Weight Paint Vertex Selection'].keymap_items:
+    for item in wm.keyconfigs.default.keymaps['Paint Vertex Selection (Weight, Vertex)'].keymap_items:
         if item.idname == 'view3d.select_lasso':
-            item.active = modo   
+            item.active = modo 
 
 
 
