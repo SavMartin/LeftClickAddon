@@ -174,6 +174,24 @@ def keymaps_default_manipulator(modo):
                 ki.active = modo
 
 
+    #Disable Dope Sheet Context Menu
+
+    for ki in  wm.keyconfigs.default.keymaps['Dopesheet'].keymap_items:
+        if "name" in ki.properties:
+            if ki.properties.name == 'DOPESHEET_MT_context_menu':
+                ki.active = modo
+    
+    #Disable Dope Sheet Select Box
+
+    for ki in wm.keyconfigs.default.keymaps['Dopesheet'].keymap_items:
+        if ki.idname == 'action.select_box' and ki.type == 'EVT_TWEAK_L':
+            ki.active = modo
+
+    #Disable Dope Sheet Select Box
+
+    wm.keyconfigs.default.keymaps['Dopesheet'].keymap_items['anim.change_frame'].active = modo
+
+
 
 
 
@@ -418,6 +436,36 @@ def register_keymap():
     # ciclico:
     kmi = km.keymap_items.new("mode.selection", 'W', 'PRESS', ctrl=True)
     addon_keymaps.append((km, kmi))
+
+    # Dope Sheet Box Select
+
+    km = kc.keymaps.new(name="Dopesheet", space_type="DOPESHEET_EDITOR", region_type='WINDOW')
+    kmi = km.keymap_items.new("action.select_box", 'EVT_TWEAK_R', 'ANY')
+    kmi.properties.mode = 'SET'
+    kmi.properties.tweak = True
+    kmi.active = True
+    addon_keymaps.append((km, kmi))
+
+    km = kc.keymaps.new(name="Dopesheet", space_type="DOPESHEET_EDITOR", region_type='WINDOW')
+    kmi = km.keymap_items.new("action.select_box", 'EVT_TWEAK_R', 'ANY', shift=True)
+    kmi.properties.mode = 'ADD'
+    kmi.properties.tweak = True
+    kmi.active = True
+    addon_keymaps.append((km, kmi))
+
+    km = kc.keymaps.new(name="Dopesheet", space_type="DOPESHEET_EDITOR", region_type='WINDOW')
+    kmi = km.keymap_items.new("action.select_box", 'EVT_TWEAK_R', 'ANY', ctrl=True)
+    kmi.properties.mode = 'SUB'
+    kmi.properties.tweak = True
+    kmi.active = True
+    addon_keymaps.append((km, kmi))
+
+    #Dope Sheet Change Frame
+
+    km = kc.keymaps.new(name="Dopesheet", space_type="DOPESHEET_EDITOR", region_type='WINDOW')
+    kmi = km.keymap_items.new("anim.change_frame", 'RIGHTMOUSE', 'PRESS', oskey = True)
+    addon_keymaps.append((km, kmi))
+
 
 
 def unregister_keymap():
