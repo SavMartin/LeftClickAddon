@@ -14,7 +14,7 @@ bl_info = {
     "name": "Leftclick Mouse Select",
     "description": "LeftclickMouse seleccion configurator",
     "author": "Jorge Hernandez - Melenedez , Sav Martin, Juan Gea",
-    "version": (0, 2),
+    "version": (0, 3),
     "blender": (2, 80, 0),
     "location": "",
     "warning": "",
@@ -27,7 +27,7 @@ def start_thread():
     _thread.start_new_thread(thrd_func,())
 
 def thrd_func():
-    time.sleep(1.9)
+    time.sleep(2.0)
     keymaps_default_manipulator(False)
     
 
@@ -137,13 +137,6 @@ def keymaps_default_manipulator(modo):
         if "name" in ki.properties:
             if ki.properties.name == 'VIEW3D_MT_armature_context_menu':
                 ki.active = modo 
-               
-    #Disable Call Menu Lattice
-
-    for ki in  wm.keyconfigs.default.keymaps['Lattice'].keymap_items:
-        if "name" in ki.properties:
-            if ki.properties.name == 'VIEW3D_MT_edit_lattice_context_menu':
-                ki.active = modo
 
     #Disable Call Menu Weight Paint
 
@@ -167,7 +160,19 @@ def keymaps_default_manipulator(modo):
 
     for item in wm.keyconfigs.default.keymaps['Paint Vertex Selection (Weight, Vertex)'].keymap_items:
         if item.idname == 'view3d.select_lasso':
-            item.active = modo 
+            item.active = modo
+
+    #Disable Weigtht Paint Sample Group
+
+    wm.keyconfigs.default.keymaps['Weight Paint'].keymap_items['paint.weight_sample_group'].active = modo
+
+    #Disable Lattice Context Menu
+
+    for ki in  wm.keyconfigs.default.keymaps['Lattice'].keymap_items:
+        if "name" in ki.properties:
+            if ki.properties.name == 'VIEW3D_MT_edit_lattice_context_menu':
+                ki.active = modo
+
 
 
 
@@ -245,6 +250,13 @@ def register_keymap():
     kmi.properties.name = 'DOPESHEET_MT_context_menu'
     addon_keymaps.append((km, kmi))
 
+    #Add Call Menu In Lattice
+
+    km = kc.keymaps.new(name="Lattice", space_type="EMPTY", region_type='WINDOW')
+    kmi = km.keymap_items.new("wm.call_menu", 'W', 'PRESS')
+    kmi.properties.name = 'VIEW3D_MT_edit_lattice_context_menu'
+    addon_keymaps.append((km, kmi))
+
     # Add Call Menu In Animation Channels
 
     km = kc.keymaps.new(name="Animation Channels", space_type="EMPTY", region_type='WINDOW')
@@ -293,13 +305,6 @@ def register_keymap():
     kmi = km.keymap_items.new("wm.call_menu", 'W', 'PRESS')
     kmi.properties.name = 'VIEW3D_MT_armature_context_menu'
     addon_keymaps.append((km, kmi))
-    
-    #Add Call Menu In Lattice
-
-    km = kc.keymaps.new(name="Lattice", space_type="EMPTY", region_type='WINDOW')
-    kmi = km.keymap_items.new("wm.call_menu", 'W', 'PRESS')
-    kmi.properties.name = 'VIEW3D_MT_edit_lattice_context_menu'
-    addon_keymaps.append((km, kmi))
 
     #Add Call Menu In Weight Paint
 
@@ -314,6 +319,13 @@ def register_keymap():
     kmi = km.keymap_items.new("wm.call_panel", 'W', 'PRESS')
     kmi.properties.name = 'VIEW3D_PT_paint_vertex_context_menu'
     addon_keymaps.append((km, kmi))
+
+    #Add Weigtht Paint Sample Group
+
+    km = kc.keymaps.new(name="Weight Paint", space_type="EMPTY", region_type='WINDOW')
+    kmi = km.keymap_items.new("paint.weight_sample_group",'RIGHTMOUSE', 'PRESS', alt = True)
+    addon_keymaps.append((km, kmi))
+
     
     #Add Call Menu In Particle
 
